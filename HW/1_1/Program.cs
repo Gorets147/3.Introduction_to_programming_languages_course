@@ -12,15 +12,17 @@ int min = 0;
 int max = 0;
 
 
-if (a > b) {
+if (a > b)
+{
     min = b;
     max = a;
-}else if(a == b){
-    System.Console.WriteLine("Числа равны");
-}else{
+}
+else if (a == b)System.Console.WriteLine("Числа равны");
+else
+{
     min = a;
     max = b;
 }
-    
+
 Console.WriteLine("Максимальное: " + max);
 Console.WriteLine("Минимальное: " + min);
