@@ -1,11 +1,22 @@
-﻿double num1 = new Random().Next(10, 100);
-double num2 = new Random().Next(1, 10);
+﻿// 3. Напишите программу, которая будет принимать на вход два числа и выводить,
+//    является ли второе число кратным первому. Если число 2 не кратно числу 1, то
+//    программа выводит остаток от деление.
 
-void CheckNumbers(double a, double b)
+//    34, 5 -> не кратно, остаток 4
+//    16, 4 -> кратно
+
+
+void rem(int a, int b)
 {
     System.Console.WriteLine($"Числа: {a}, {b}");
-    if (a % b == 0) System.Console.WriteLine("Числа кратны");
-    else System.Console.WriteLine($"Не кратны, остаток: {a % b}");
+    if (a % b == 0)
+        Console.WriteLine("Числа кратны");
+    else 
+    {  
+         Console.WriteLine("Числа не кратны "+a % b);
+    }
+        
 }
-
-CheckNumbers(num1, num2);
+int numA = new Random().Next(10, 100);
+int numB = new Random().Next(1, 10);
+rem(numA, numB);
