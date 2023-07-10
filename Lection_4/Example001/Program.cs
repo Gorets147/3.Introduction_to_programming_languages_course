@@ -39,6 +39,19 @@ void FillArray(int[,] matr)
     }
 }
 
+void PrintImage(int[,] img)
+{
+    for (int i = 0; i < img.GetLength(0); i++)
+    {
+        for (int j = 0; j < img.GetLength(1); j++)
+        {
+            System.Console.Write($"{img[i, j]} ");
+        }
+        System.Console.WriteLine();
+    }
+}
+
+
 int[,] matrix = new int[3, 4];
 FillArray(matrix);
 PrintArray(matrix);
