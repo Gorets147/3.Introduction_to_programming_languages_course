@@ -1,21 +1,5 @@
 ﻿
 
-string[,] table = new string[2, 5];
-// String.Empty;
-// table[0, 0] table[0, 1] table[0, 2]... table[0, 4]
-// table[1, 0] table[1, 1] table[1, 2]... table[1, 4]
-
-
-// table[1, 2] = "Слово";
-
-// for (int rows = 0; rows < 2; rows++)
-// {
-//     for (int colums = 0; colums < 5; colums++)
-//     {
-//         System.Console.WriteLine($"-{table[rows, colums]}-");
-//     }
-// }
-
 void PrintArray(int[,] matr)
 {
     for (int i = 0; i < matr.GetLength(0); i++)
@@ -39,19 +23,24 @@ void FillArray(int[,] matr)
     }
 }
 
-void PrintImage(int[,] img)
+int[,] CopyMatrix(int[,] matr)
 {
-    for (int i = 0; i < img.GetLength(0); i++)
+    int[,] CopyMatr = new int[matr.GetLength(0), matr.GetLength(1)];
+
+    for (int i = 0; i < matr.GetLength(0); i++)
     {
-        for (int j = 0; j < img.GetLength(1); j++)
+        for (int j = 0; j < matr.GetLength(1); j++)
         {
-            System.Console.Write($"{img[i, j]} ");
+            CopyMatr[i, j] = matr[i, j];
         }
         System.Console.WriteLine();
     }
+    return CopyMatr;
 }
-
 
 int[,] matrix = new int[3, 4];
 FillArray(matrix);
+int[,] matrix2 = CopyMatrix(matrix);
+
 PrintArray(matrix);
+PrintArray(matrix2);
