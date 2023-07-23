@@ -19,7 +19,7 @@ void PrintArray(double[,] matr)
     }
 }
 
-double[,] FillArray(int rows, int colums)
+double[,] FillArray(int rows, int colums, int from, int to)
 {
     double[,] matr = new double[rows, colums];
     Random rand = new Random();
@@ -28,7 +28,7 @@ double[,] FillArray(int rows, int colums)
     {
         for (int j = 0; j < matr.GetLength(1); j++)
         {
-            matr[i, j] = Math.Round(rand.NextDouble() * 10, 2);
+            matr[i, j] = Math.Round(rand.NextDouble() * (to - from) + from, 2);
         }
     }
     return matr;
@@ -49,7 +49,12 @@ int m = int.Parse(Console.ReadLine()!);
 Console.WriteLine("Введите количество столбцов ");
 int n = int.Parse(Console.ReadLine()!);
 
+System.Console.WriteLine("Введите минимальное число массива: ");
+int start = int.Parse(Console.ReadLine()!);
+System.Console.WriteLine("Введите максимальное число массива: ");
+int stop = int.Parse(Console.ReadLine()!);
+
 double[,] matrix = new double[m, n];
 
-double[,] matrix2 = FillArray(m, n);
+double[,] matrix2 = FillArray(m, n, start, stop);
 PrintArray(matrix2);
